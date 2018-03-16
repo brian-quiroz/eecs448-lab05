@@ -1,0 +1,47 @@
+<head>
+  <meta charset="UTF-8">
+  <title> Customer Frontend </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+   h1 {
+     text-align: center;
+     color: #0079b6;
+     font-family: Helvetica;
+    }
+    p {
+      color: green;
+      font-size: 20px;
+    }
+    .container-fluid {
+      font-size: 18px;
+    }
+  </style>
+</head>
+  <body>
+    <div class="container-fluid">
+      <h1 class="text-center">Database Setup</h1>
+      <div class="row">
+      <div class="col-md-4"></div>
+        <div class ="col-md-4">
+          <h3>Code used for creating Users table:</h3>
+          <p>CREATE TABLE Users (</p>
+          <p>user_id varchar(255) NOT NULL,</p>
+          <p>PRIMARY KEY(user_id)</p>
+          <p>);</p>
+          <h3>Code used for creating Posts table:</h3>
+          <p>CREATE TABLE Posts (</p>
+          <p>post_id int NOT NULL AUTO_INCREMENT,</p>
+          <p>author_id varchar(255) NOT NULL,</p>
+          <p>content TEXT NO NULL,</p>
+          <p>PRIMARY KEY(post_id),</p>
+          <p>FOREIGN KEY(author_id) REFERENCES Users(user_id)</p>
+          <p>);</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</head>
+</html>
