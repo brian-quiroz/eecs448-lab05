@@ -1,0 +1,58 @@
+<head>
+  <meta charset="UTF-8">
+  <title> Customer Frontend </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+   h1 {
+     text-align: center;
+     color: #0079b6;
+     font-family: Helvetica;
+    }
+    p {
+      font-size: 20px;
+    }
+    .container-fluid {
+      font-size: 18px;
+    }
+  </style>
+</head>
+  <body>
+    <div class="container-fluid">
+      <h1 class="text-center">View User Posts</h1>
+      <div class="row">
+      <div class="col-md-4"></div>
+        <div class ="col-md-4">
+          <p>Select a user and click "Submit" to view their posts:</p>
+          <form action="ViewUserPosts.php" method="post">
+            <select name="selection">
+              <?php
+              $username = null;
+              $mysqli = new mysqli("mysql.eecs.ku.edu", "r229q057", "yuF4cuNa", "r229q057");
+
+              if ($mysqli->connect_errno) {
+              	printf("Connect failed: %s\n", $mysqli->connect_error);
+              	exit();
+              }
+
+              $query = "SELECT user_id FROM Users";
+
+              if ($result = $mysqli->query($query)) {
+                while ($row = $result->fetch_assoc()) {
+                  $username = $row["user_id"];
+                  echo "<option value='$username'>" . $username . "</option>";
+                }
+                $result->free();
+              }
+              ?>
+            </select><br><br>
+            <input class ="btn btn-block btn-success" type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</head>
+</html>
