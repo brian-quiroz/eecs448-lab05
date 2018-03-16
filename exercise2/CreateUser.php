@@ -19,7 +19,7 @@ if($username === "") {
 if (!$blankUsername) {
 	$query = "INSERT INTO Users(user_id) VALUES ('$username')";
 	if ($mysqli->query($query)) {
-			echo"Name successfully added!<br>";
+			echo"Username successfully added!<br>";
 	} else {
 			echo"Error! The username you are trying to add already exists in the database.<br>";
 	}

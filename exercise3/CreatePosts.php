@@ -34,7 +34,7 @@ if (!$blankInput) {
     if ($foundUser) {
       $query2 = "INSERT INTO Posts(content, author_id) VALUES('$userpost','$username')";
       if ($mysqli->query($query2)) {
-        echo "Successful addition!";
+        echo "Post successfully added!";
       }
     } else {
       echo "Error! Username does not exist.";

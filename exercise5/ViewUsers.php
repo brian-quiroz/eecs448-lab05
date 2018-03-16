@@ -10,7 +10,8 @@ if ($mysqli->connect_errno) {
 $query = "SELECT user_id FROM Users";
 
 if ($result = $mysqli->query($query)) {
-  echo "<table>" . "<th style='border: 1px solid black; font-size: 18px;'>Users</th>";
+  echo "<h1 style='text-align: center; color: #0079b6; font-family: Helvetica;' class='text-center'>View Users</h1>";
+  echo "<table align='center'>" . "<th style='border: 1px solid black; font-size: 18px;'>Users</th>";
   while ($row = $result->fetch_assoc()) {
     echo "<tr><td style='border: 1px solid black;' align='center'>" . $row["user_id"] . "</td></tr>";
   }
