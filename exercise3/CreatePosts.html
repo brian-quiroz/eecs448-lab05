@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Customer Frontend </title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+		 h1 {
+			 text-align: center;
+			 color: #0079b6;
+			 font-family: Helvetica;
+			}
+			input {
+				font-size: 18px;
+			}
+			.container-fluid {
+				font-size: 18px;
+			}
+		</style>
+	</head>
+		<body>
+			<div class="container-fluid">
+				<h1 class="text-center">Create Posts</h1>
+				<div class="row">
+				<div class="col-md-4"></div>
+					<div class ="col-md-4">
+						<form action="CreatePosts.php" method="post">
+							<p>Enter username:</p>
+							<input type="text" id="username" name="username" placeholder="username"><br><br>
+              <p>Enter post:</p>
+							<textarea type="text" id="userpost" name="userpost" placeholder="Your post."></textarea>
+							<br><br>
+							<input class ="btn btn-block btn-success" type="submit" value="Submit">
+						</form>
+					</div>
+				</div>
+			</div>
+		</body>
+	</head>
+</html>
